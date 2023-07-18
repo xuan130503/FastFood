@@ -19,4 +19,9 @@ public class HomeController {
 	public String contact() {
 		return "views/home/user/layout/contact";
 	}
+	
+	@GetMapping("/account")
+	public String account() {
+		return "views/home/user/layout/login";
+	}
 }
