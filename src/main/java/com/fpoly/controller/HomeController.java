@@ -9,4 +9,9 @@ public class HomeController {
 	public String index() {
 		return "views/home/user/home";
 	}
+	
+	@GetMapping("/index2")
+	public String about() {
+		return "views/home/user/home";
+	}
 }
