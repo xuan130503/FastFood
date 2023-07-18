@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html style="font-size: 16px;" lang="en" 
+th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" 
+xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -31,81 +33,6 @@
 <meta th:data-intl-tel-input-cdn-path="@{/css/intlTelInput/}">
 </head>
 <body class="u-body u-overlap u-xl-mode" data-lang="en">
-	<header class="u-clearfix u-header u-header" id="sec-03c7">
-		<div class="u-clearfix u-sheet u-valign-top u-sheet-1">
-			<a href="/index" class="u-image u-logo u-image-1"
-				data-image-width="1000" data-image-height="1000"> <img width=100px
-				th:src="@{/image/723797_19484994_3556536_ab32e507_image.png}"
-				class="u-logo-image u-logo-image-1">
-			</a>
-			<nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-				<div class="menu-collapse"
-					style="font-size: 1rem; letter-spacing: 0px;">
-					<a
-						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-						href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink"
-								xlink:href="#menu-hamburger"></use></svg> <svg class="u-svg-content"
-							version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px"
-							y="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
-							xmlns="http://www.w3.org/2000/svg">
-							<g>
-							<rect y="1" width="16" height="2"></rect>
-							<rect y="7" width="16" height="2"></rect>
-							<rect y="13" width="16" height="2"></rect>
-</g></svg>
-					</a>
-				</div>
-				<div class="u-custom-menu u-nav-container">
-					<ul
-						class="u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="index.html" style="padding: 10px 20px;">Trang chủ</a></li>
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="menu.html" style="padding: 10px 20px;">Thực đơn</a></li>
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="about.html" style="padding: 10px 20px;">Giới thiệu</a></li>
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="contact.html" style="padding: 10px 20px;">Liên hệ</a></li>
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="cart.html" style="padding: 10px 20px;">Giỏ hàng</a></li>
-						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							href="account.html" style="padding: 10px 20px;">Tài khoản</a></li>
-					</ul>
-				</div>
-				<div class="u-custom-menu u-nav-container-collapse">
-					<div
-						class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-						<div class="u-inner-container-layout u-sidenav-overflow">
-							<div class="u-menu-close"></div>
-							<ul
-								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="index.html">Trang chủ</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="menu.html">Thực đơn</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="about.html">Giới thiệu</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="contact.html">Liên hệ</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="cart.html">Giỏ hàng</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="account.html">Tài khoản</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-				</div>
-			</nav>
-		</div>
-	</header>
 	<section class="u-clearfix u-section-1" id="sec-7e1d">
 		<div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
 			<div
@@ -267,87 +194,5 @@
 			</div>
 		</div>
 	</section>
-	<section class="u-clearfix u-section-6" id="carousel_10af">
-		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-			<div
-				class="u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-1">
-				<div class="u-container-layout u-container-layout-1">
-					<div
-						class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
-						<div class="u-repeater u-repeater-1">
-							<div
-								class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-								<div
-									class="u-container-layout u-similar-container u-container-layout-2">
-									<span
-										class="u-file-icon u-icon u-icon-circle u-palette-4-base u-icon-1"><img
-										th:src="@{/image/646094-d1da5d31.png}" alt=""></span>
-									<h6 class="u-text u-text-1">mail</h6>
-									<p class="u-text u-text-2">
-										Our friendly team is here to help.<br> <a
-											href="https://nicepage.best"
-											class="u-active-none u-border-active-palette-3-base u-border-hover-palette-3-base u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-palette-3-base u-text-hover-palette-3-base u-text-palette-3-base u-btn-1">vietfastfood@gmail.com
-										</a>
-									</p>
-								</div>
-							</div>
-							<div
-								class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-								<div
-									class="u-container-layout u-similar-container u-container-layout-3">
-									<span
-										class="u-file-icon u-icon u-icon-circle u-palette-4-base u-icon-2"><img
-										th:src="@{/image/2838912-7facd193.png}" alt=""></span>
-									<h6 class="u-text u-text-3">địa chỉ</h6>
-									<p class="u-text u-text-4">
-										<a href="https://nicepage.me"
-											class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-2">260/14
-											Thiên Phước, P.15, Q.11</a> <br>
-									</p>
-								</div>
-							</div>
-							<div
-								class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-								<div
-									class="u-container-layout u-similar-container u-container-layout-4">
-									<span
-										class="u-file-icon u-icon u-icon-circle u-palette-4-base u-icon-3"><img
-										th:src="@{/image/8066424-92fb1413.png}" alt=""></span>
-									<h6 class="u-text u-text-5">Phone</h6>
-									<p class="u-text u-text-6">
-										Từ thứ 2-6, 8:00 - 21:00<br>0778112175
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<h1 class="u-text u-text-7">Liên hệ với chúng tôi</h1>
-					<h6 class="u-text u-text-body-alt-color u-text-default u-text-8">Sample
-						Headline</h6>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
-		id="sec-9b79">
-		<div class="u-clearfix u-sheet u-sheet-1">
-			<p class="u-small-text u-text u-text-variant u-text-1">Viet Fast
-				Food copyright 2023&nbsp;</p>
-		</div>
-	</footer>
-	<section class="u-backlink u-clearfix u-grey-80">
-		<a class="u-link" href="https://nicepage.com/html-templates"
-			target="_blank"> <span>Free HTML Templates</span>
-		</a>
-		<p class="u-text">
-			<span>created with</span>
-		</p>
-		<a class="u-link" href="https://nicepage.com/website-builder"
-			target="_blank"> <span>Website Builder</span>
-		</a>.
-	</section>
-
 </body>
 </html>
