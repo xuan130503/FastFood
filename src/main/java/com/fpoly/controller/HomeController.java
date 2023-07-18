@@ -20,7 +20,7 @@ public class HomeController {
 		return "views/home/user/layout/contact";
 	}
 	
-	@GetMapping("/account")
+	@GetMapping("/account2")
 	public String account() {
 		return "views/home/user/layout/login";
 	}
