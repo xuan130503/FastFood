@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html th:fragment="dynamic(home)" xmlns:th="http://www.thymeleaf.org">
+<html th:fragment="dynamic(main)" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -9,6 +9,9 @@
 <title>Home</title>
 <link rel="stylesheet" th:href="@{/css/nicepage.css}" media="screen">
 <link rel="stylesheet" th:href="@{/css/Home.css}" media="screen">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 <script class="u-script" type="text/javascript" th:src="@{/js/jquery.js}" defer=""></script>
 <script class="u-script" type="text/javascript" th:src="@{/js/nicepage.js}"
 	defer=""></script>
@@ -30,8 +33,8 @@
 <meta th:data-intl-tel-input-cdn-path="@{/css/intlTelInput/}">
 </head>
 <body class="u-body u-overlap u-xl-mode" data-lang="en">
-	<header class="u-clearfix u-header u-header" id="sec-03c7" th:insert="~{/views/home/user/layout/menu.html :: menu}"></header>
-	<div th:replace="${home}"></div>
-	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" th:fragment="footer" id="sec-9b79" th:insert="~{/views/home/user/layout/footer.html :: footer}"></footer>
+	<div th:insert="~{/views/home/user/layout/menu.html}"></div>
+	<div th:replace="${main}"></div>
+	<div th:insert="~{/views/home/user/layout/footer.html}"></div>
 </body>
 </html>

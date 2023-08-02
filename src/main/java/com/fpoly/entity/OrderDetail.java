@@ -1,4 +1,4 @@
-package com.fpoly.bean;
+package com.fpoly.entity;
 
 import java.io.Serializable;
 
@@ -9,23 +9,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity
-@Table(name = "Authorities", uniqueConstraints = {
-		@UniqueConstraint(columnNames = {"Username", "Roleid"})
-})
-public class Authority  implements Serializable{
-	@Id 
+@Entity 
+@Table(name = "Orderdetails")
+public class OrderDetail  implements Serializable{
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	Long id;
+	Double price;
+	Integer quantity;
 	@ManyToOne
-	@JoinColumn(name = "Username")
-	private Account account;
-	@ManyToOne 
-	@JoinColumn(name = "Roleid")
-	private Role role;
+	@JoinColumn(name = "Productid")
+	Product product;
+	@ManyToOne
+	@JoinColumn(name = "Orderid")
+	Order order;
 }

@@ -34,7 +34,7 @@
 <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 <body class="u-body u-overlap u-xl-mode" data-lang="en">
-	<header class="u-clearfix u-header u-header" id="sec-03c7" th:insert="~{/views/home/user/layout/menu.html :: menu}"></header>
+	<header th:insert="~{/views/home/user/layout/menu.html}"></header>
 	<section class="u-align-center u-clearfix u-gradient u-section-1"
 		id="carousel_9116">
 		<div class="u-clearfix u-sheet u-sheet-1">
@@ -85,9 +85,6 @@
 			</div>
 		</div>
 	</section>
-
-
-		<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" th:fragment="footer" id="sec-9b79" th:insert="~{/views/home/user/layout/footer.html :: footer}"></footer>
-
+		<footer id="sec-9b79" th:insert="~{/views/home/user/layout/footer.html}"></footer>
 </body>
 </html>

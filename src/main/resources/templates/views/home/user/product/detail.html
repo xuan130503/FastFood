@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"
+xmlns:th="http://www.thymeleaf.org"
+th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
+
+<body class="u-body u-overlap u-xl-mode" data-lang="en">
+	<section class="container" id="carousel_225d" style="padding-top:100px">
+		<main th:object="${food_items}" class="poly-item-detail">
+		<div class="row">
+			<div class="card text-center mt-3">
+				<img th:src="@{|/images/*{image}|}" />
+			</div>
+			<div class="card mt-3">
+				<ul>
+					<li th:text="*{name}"></li>
+					<li th:text="*{price}"></li>
+					<li th:text="*{createDate}"></li>
+					<li th:text="*{category.name}"></li>
+				</ul>
+			</div>
+			<div class="card-footer mt-3">
+				<button class="btn btn-success" style="float: right;">Buy</button>
+			</div>
+		</div>
+		<div class="row">
+			SAME PRODUCTS
+			<ul>
+				<li th:each="p:${food_items.category.products}"><a
+					th:href="@{|/product/detail/${p.id}|}">[[${p.name}]]</a></li>
+			</ul>
+		</div>
+	</main>
+	</section>
+</body>
+</html>

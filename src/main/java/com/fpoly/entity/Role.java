@@ -1,4 +1,4 @@
-package com.fpoly.bean;
+package com.fpoly.entity;
 
 import java.io.Serializable;
 import java.util.List;
