@@ -32,9 +32,10 @@
 <meta property="og:type" content="website">
 <meta th:data-intl-tel-input-cdn-path="@{/css/intlTelInput/}">
 </head>
-<body class="u-body u-overlap u-xl-mode" data-lang="en">
+<body class="u-body u-overlap u-xl-mode" data-lang="en" ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
 	<div th:insert="~{/views/home/user/layout/menu.html}"></div>
 	<div th:replace="${main}"></div>
 	<div th:insert="~{/views/home/user/layout/footer.html}"></div>
+	<script type="text/javascript" src="/assets/js/shopping-cart-app.js"></script>
 </body>
 </html>

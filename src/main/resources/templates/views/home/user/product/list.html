@@ -21,7 +21,7 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 				<div class="card-body" th:text="${p.name}"></div>
 				<div class="card-footer">
 					<b class="pull-left" style="float:left;">$[[${p.price}]]</b>
-					<button class="btn btn-success" style="float:right;">Buy</button>
+					<button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success" style="float:right;">Buy</button>
 				</div>
 			 </div>
 		</div>
