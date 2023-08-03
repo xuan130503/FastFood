@@ -5,11 +5,18 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 
 <body class="u-body u-overlap u-xl-mode" data-lang="en">
 	<section class="container" id="carousel_225d" style="padding-top:100px">
+		<div class="row">
+			<ul class="list-group list-group-horizontal-sm">
+			  <li th:each="c: ${cates}" class="list-group-item ">
+			  	<a  th:href="@{|/product/list?cid=${c.id}|}">[[${c.name}]]</a>
+			  </li>
+			</ul>
+		</div>
 		<main class="row">
 		<div th:each="p: ${food_items}" class="col-sm-4 mt-3">
 			<div class="card text-center">
 				<a th:href="@{|/product/detail/${p.id}|}">
-					<img th:src="@{|/images/${p.image}|}"/>
+					<img th:src="@{|/assets/images/${p.image}|}"/>
 				</a>
 				<div class="card-body" th:text="${p.name}"></div>
 				<div class="card-footer">
