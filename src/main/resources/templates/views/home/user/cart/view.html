@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 <body>
-	<main class="container" style="padding-top:90px;">
-		<h1>CART</h1>
+	<main  style="padding-top:90px;" >
+		<div class="container" th:fragment="shopping_cart">
+		<h2>CART</h2>
 		<table class="table table-striped">
 		  	<thead>
 		  		<tr>
@@ -37,6 +38,8 @@
 				Checkout
 			</a>
 		</div>
+		</div>
+		
 	</main>
 </body>
 </html>

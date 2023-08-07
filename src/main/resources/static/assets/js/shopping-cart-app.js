@@ -55,4 +55,30 @@ app.controller("shopping-cart-ctrl", function($http, $scope) {
 		}
 	}
 	$scope.cart.loadFromLocalStorage();
+	
+	$scope.order = {
+		createDate : new Date(),
+		address: "",
+		userinfo: {username: $("#username").text()},
+		get orderDetails() {
+			return $scope.cart.items.map(item => {
+				return {
+					product : {id: item.id},
+					price: item.price,
+					quantity: item.qty
+				}
+			});
+		},
+		purchase() {
+			var order = angular.copy(this);
+			$http.post("/rest/orders", order).then(resp =>{
+				alert('Successfully');
+				$scope.cart.clear();
+				location.href = "/order/detail/" + resp.data.id;
+			}).catch(error => {
+				alert('Failed')
+				console.log(error)
+			})
+		}
+	}
 })

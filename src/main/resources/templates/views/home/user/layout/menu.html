@@ -31,11 +31,8 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 	</g></svg>
 				</a>
 			</div>
-			<div class="u-custom-menu u-nav-container">
+			<div class="u-custom-menu u-nav-container dropdown">
 				<ul class="u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
-					<li class="u-nav-item" sec:authorize="isAuthenticated()">
-						Xin chào, <span sec:authentication="name"></span>
-					</li>
 					<li class="u-nav-item"><a
 						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
 						th:href="@{/index}" style="padding: 10px 20px;">Trang chủ</a></li>
@@ -50,14 +47,23 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 						th:href="@{/index/contact}" style="padding: 10px 20px;">Liên hệ</a></li>
 					<li class="u-nav-item"><a
 						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/cart/view}" style="padding: 10px 20px;">Giỏ hàng</a></li>
+						th:href="@{/cart/view}" style="padding: 10px 20px;">Giỏ hàng({{cart.count}})</a></li>
 					
 					<li class="u-nav-item" sec:authorize="isAuthenticated()">
-						<a
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/auth/logoff}" style="padding: 10px 20px;">Đăng xuất</a>
-					</li>
-						
+						<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2" data-bs-toggle="dropdown">
+					     	Xin chào, <span sec:authentication="name"></span>
+					    </a>
+						<ul class="dropdown-menu">
+							<li class="u-nav-item"><a
+							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+							th:href="@{/order/list}" style="padding: 10px 20px;">Đơn hàng</a></li>
+						  	<li class="u-nav-item" sec:authorize="isAuthenticated()">
+								<a
+								class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/auth/logoff}" style="padding: 10px 20px;">Đăng xuất</a>
+							</li>
+						</ul>	
+					</li>		
 				</ul>
 			</div>
 			<div class="u-custom-menu u-nav-container-collapse">

@@ -32,7 +32,7 @@ public class Order implements Serializable{
 	@Column(name = "Createdate")
 	Date createDate = new Date();
 	@ManyToOne
-	@JoinColumn(name = "Userinfoid")
+	@JoinColumn(name = "username")
 	UserInfo userinfo;
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")

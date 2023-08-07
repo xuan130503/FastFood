@@ -19,8 +19,6 @@ import lombok.Data;
 @Table(name = "Userinfo")
 public class UserInfo implements Serializable {
 	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	private String username;
     private String password;
     private String fullname;
