@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -18,6 +19,8 @@ import lombok.Data;
 public class Category implements Serializable{
 	@Id
 	String id;
+	
+	@Column(columnDefinition = "NVARCHAR(255) NOT NULL")
 	String name;
 	@JsonIgnore
 	@OneToMany(mappedBy = "category")

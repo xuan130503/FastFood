@@ -7,7 +7,7 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 	<section class="container" id="carousel_225d" style="padding-top:100px">
 		<main th:object="${food_items}" class="poly-item-detail">
 		<div class="row">
-			<div class="card text-center mt-3">
+			<div class="card text-center mt-3 col-sm-3">
 				<img th:src="@{|/assets/image/*{image}|}" style="width:100px; height: 100px;"/>
 			</div>
 			<div class="card mt-3">

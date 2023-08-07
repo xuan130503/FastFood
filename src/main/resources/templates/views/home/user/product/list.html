@@ -20,7 +20,7 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 				</a>
 				<div class="card-body" th:text="${p.name}"></div>
 				<div class="card-footer">
-					<b class="pull-left" style="float:left;">[[${p.price}]] VND</b>
+					<b class="pull-left" style="float:left;">[[*{#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')}]] VND</b>
 					<button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success" style="float:right;">Buy</button>
 				</div>
 			 </div>
