@@ -6,10 +6,12 @@
 <meta name="keywords"
 	content="40%, ​Where every ingredient tells a story">
 <meta name="description" content="">
-<title>login</title>
+<title>Đăng ký</title>
 <link rel="stylesheet" th:href="@{/assets/css/nicepage.css}" media="screen">
 <link rel="stylesheet" th:href="@{/assets/css/login.css}" media="screen">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
 <script class="u-script" type="text/javascript"
 	th:src="@{/assets/js/jquery.js}" defer=""></script>
 <script class="u-script" type="text/javascript"
@@ -34,37 +36,34 @@
 <meta property="og:type" content="website">
 <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
-<body class="u-body u-overlap u-xl-mode" data-lang="en">
-	<section class="u-align-center u-clearfix u-gradient u-section-1"
-		id="carousel_9116">
-		<div class="u-clearfix u-sheet u-sheet-1">
-			<h2 class="u-text u-text-default u-text-1">Đăng nhập</h2>
-			<div
-				class="u-align-center u-container-style u-group u-radius-30 u-shape-round u-white u-group-1">
-				<div class="u-container-layout u-container-layout-1">
-					<div class="u-form u-form-1">
-					<form action="/auth/login" method="post">
-					  <div class="mb-3">
-					    <label for="exampleInputEmail1" class="form-label" style="float: left;">Tài khoản:</label>
-					    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					  </div>
-					  <div class="mb-3">
-					    <label for="exampleInputPassword1" class="form-label" style="float: left;">Mật khẩu:</label>
-					    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-					  </div>
-					  <div class="mb-3 form-check">
-					    <input type="checkbox" name="remember" class="form-check-input" id="exampleCheck1">
-					    <label class="form-check-label" for="exampleCheck1" style="float: left;">Lưu đăng nhập</label>
-					  </div>
-					  <button type="submit" class="btn btn-primary">Đăng nhập</button>
-					</form>
-						<i th:text="${error}" style="color:red;"></i>
-
-					</div>
+<body class="u-body u-overlap u-xl-mode" data-lang="en" ng-app="registry-app" ng-controller="registry-ctrl">
+	<div class="container">
+		<div class="row justify-content-center" style="padding-top: 100px">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2>Đăng ký</h2>
+				<div class="form-group">
+					<div>Tài khoản</div>
+					<input id="username" ng-model="form.username" class="form-control">
 				</div>
+				<div class="form-group">
+					<div>Mật khẩu</div>
+					<input id="password" ng-model="form.password" class="form-control">
+				</div>
+				<div class="form-group">
+					<div>Email</div>
+					<input id="email" ng-model="form.email" class="form-control">
+				</div>
+				<div class="form-group">
+					<div>Họ tên</div>
+					<input id="fullname" ng-model="form.fullname" class="form-control">
+				</div>
+				<button ng-click="create()" style="float:right" class="btn btn-primary mt-2">Đăng ký</button>
 			</div>
+			<div class="col-sm-4"></div>
 		</div>
-	</section>
+	</div>
 		<footer id="sec-9b79" th:insert="~{/views/home/user/layout/footer.html}"></footer>
+		<script type="text/javascript" src="/assets/js/registry.js"></script>
 </body>
 </html>

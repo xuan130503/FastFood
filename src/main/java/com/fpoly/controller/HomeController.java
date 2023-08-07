@@ -19,6 +19,11 @@ public class HomeController {
 		return "views/home/user/layout/home";
 	}
 	
+	@RequestMapping("/registry")
+	public String registry() {
+		return "views/home/user/layout/registry";
+	}
+	
 	@GetMapping("/about")
 	public String about() {
 		return "views/home/user/layout/about";

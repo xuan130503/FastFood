@@ -41,9 +41,9 @@ app.controller("product-ctrl", function($scope, $http){
 			resp.data.createDate = new Date(resp.data.createDate)
 			$scope.items.push(resp.data);
 			$scope.reset();
-			alert("Them thanh cong")
+			alert("Thêm thành công")
 		}).catch(error => {
-			alert("Them that bai");
+			alert("Failed");
 			console.log("error", error)
 		})
 	}
@@ -53,9 +53,9 @@ app.controller("product-ctrl", function($scope, $http){
 		$http.delete(`/rest/products/${item.id}`, item).then(resp => {
 			var index = $scope.items.findIndex(p => p.id == item.id);
 			$scope.items[index] = item;
-			alert("Cap nhat thanh cong")
+			alert("Cập nhật thành công")
 		}).catch(error => {
-			alert("Cap nhat that bai");
+			alert("Failed");
 			console.log("error", error)
 		})
 	}
@@ -63,11 +63,13 @@ app.controller("product-ctrl", function($scope, $http){
 		var item = angular.copy($scope.form);
 		$http.put(`/rest/products/${item.id}`, item).then(resp => {
 			var index = $scope.items.findIndex(p => p.id == item.id);
-			$scope.items.splice(index, 1);
-			$scope.reset();
-			alert("Xoa thanh cong")
+			if (confirm('Bạn có muốn xóa') == true){
+				$scope.items.splice(index, 1);
+				$scope.reset();
+				alert("Xóa thành công")
+			}
 		}).catch(error => {
-			alert("Xoa that bai");
+			alert("Failed");
 			console.log("error", error)
 		})
 	}
@@ -75,7 +77,7 @@ app.controller("product-ctrl", function($scope, $http){
 		var data = new FormData();
 		data.append('file', files[0]);
 		$http.post('/rest/upload/images', data, {
-			transformReqiest: angular.identity,
+			transformRequest: angular.identity,
 			headers: {'Content-Type': undefined}
 		}).then(resp => {
 			$scope.form.image = resp.data.name;

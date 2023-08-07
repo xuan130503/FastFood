@@ -6,28 +6,28 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}">
 	<main style="padding-top:100px">
 	<div th:replace="~{/views/home/user/cart/view :: shopping_cart}"></div>
 		<div class="container">
-			<h2>ORDER PURCHASING</h2>
+			<h2>Xác nhận thanh toán</h2>
 			<div>
-				<div class="row">
+				<div class="row my-2">
 					<div class="form-group col-sm-6">
-						<div>Purchaser:</div>
+						<div>Người mua:</div>
 						<div class="form-control"><span sec:authentication="name" id="username"></span>
 					</div>
 					</div>
 					<div class="form-group col-sm-6">
-						<div>Order date:</div>
+						<div>Ngày mua:</div>
 						<div class="form-control">{{order.createDate | date: 'dd-MM-yyyy'}}</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-12">
-						<div>Shipping address:</div>
+						<div>Địa chỉ:</div>
 						<textarea ng-model="order.address" class="form-control"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="panel-footer text-right">
-				<button ng-click="order.purchase()" class="btn btn-success">Purchase</button>
+				<button ng-click="order.purchase()" class="btn btn-success my-3">Thanh toán</button>
 			</div>
 		</div>
 	</main>
