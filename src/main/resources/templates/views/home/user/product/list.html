@@ -6,26 +6,33 @@ th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" >
 <body class="u-body u-overlap u-xl-mode" data-lang="en">
 	<section class="container" id="carousel_225d" style="padding-top:100px">
 		<div class="row">
-			<ul class="list-group list-group-horizontal-sm">
-			  <li th:each="c: ${cates}" class="list-group-item ">
+			<ul class="list-group list-group-horizontal-sm ">
+			  <li th:each="c: ${cates}" class="list-group-item">
 			  	<a style="text-decoration: none; color: black;"  th:href="@{|/product/list?cid=${c.id}|}">[[${c.name}]]</a>
 			  </li>
 			</ul>
 		</div>
-		<main class="row">
+		<main class="row">		
 		<div th:each="p: ${food_items}" class="col-sm-2 mt-3">
-			<div class="card text-center">
+			<div class="card text-center " >
 				<a th:href="@{|/product/detail/${p.id}|}">
-					<img th:src="@{|/assets/image/${p.image}|}" style="width:90%; height: 170px"/>
+					<img th:src="@{|/assets/image/${p.image}|}" style="width:100%; height: 170px 	"/>
 				</a>
 				<div class="card-body" th:text="${p.name}"></div>
 				<div class="card-footer">
-					<b class="pull-left" style="float:left;">[[*{#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')}]] VND</b>
-					<button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success" style="float:right;">Buy</button>
+					<b class="pull-left" style="float:none;">[[*{#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')}]] VND</b><br>
+					<button th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-success" style="float:none; padding: 3px 30px;">Buy</button>
 				</div>
 			 </div>
 		</div>
 		</main>
 	</section>
+	<div class="bg-image hover-overlay hover-zoom hover-shadow ripple">
+		<img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
+		<a href="#!">
+			<div class="mask" style="background-color: hsla(195, 83%, 58%, 0.2)"></div>
+		</a>
+	</div>
 </body>
+
 </html>

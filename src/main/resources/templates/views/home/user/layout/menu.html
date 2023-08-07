@@ -1,104 +1,104 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
+
 <body>
-<div class="u-clearfix u-header u-header" style="margin-bottom: 50px;" id="sec-03c7">
-	<div class="u-clearfix u-sheet u-valign-top u-sheet-1">
-		<a href="/index" class="u-image u-logo u-image-1"
-			data-image-width="1000" data-image-height="1000"> <img width=100px
-			th:src="@{/assets/image/723797_19484994_3556536_ab32e507_image.png}"
-			class="u-logo-image u-logo-image-1">
-		</a>
-		<nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-			<div class="menu-collapse"
-				style="font-size: 1rem; letter-spacing: 0px;">
-				<a
-					class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-					href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink"
-							xlink:href="#menu-hamburger"></use></svg> <svg class="u-svg-content"
-						version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px"
-						y="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
-						xmlns="http://www.w3.org/2000/svg">
-								<g>
+	<div class="u-clearfix u-header u-header" style="margin-bottom: 50px;" id="sec-03c7">
+		<div class="u-clearfix u-sheet u-valign-top u-sheet-1">
+			<a href="/index" class="u-image u-logo u-image-1" data-image-width="1000" data-image-height="1000"> <img
+					width=100px th:src="@{/assets/image/723797_19484994_3556536_ab32e507_image.png}"
+					class="u-logo-image u-logo-image-1">
+			</a>
+			<nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+				<div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+					<a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+						href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+						</svg> <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px"
+							y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+							<g>
 								<rect y="1" width="16" height="2"></rect>
 								<rect y="7" width="16" height="2"></rect>
 								<rect y="13" width="16" height="2"></rect>
-	</g></svg>
-				</a>
-			</div>
-			<div class="u-custom-menu u-nav-container dropdown">
-				<ul class="u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
-					<li class="u-nav-item"><a
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/index}" style="padding: 10px 20px;">Trang chủ</a></li>
-					<li class="u-nav-item"><a
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/product/list}" style="padding: 10px 20px;">Thực đơn</a></li>
-					<li class="u-nav-item"><a
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/index/about}" style="padding: 10px 20px;">Giới thiệu</a></li>
-					<li class="u-nav-item"><a
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/index/contact}" style="padding: 10px 20px;">Liên hệ</a></li>
-					<li class="u-nav-item"><a
-						
-						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/cart/view}" style="padding: 10px 20px;" >Giỏ hàng <span sec:authorize="isAuthenticated()">({{cart.count}})</span></a></li>
-					<li class="u-nav-item" sec:authorize="isAuthenticated()">
-						<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2" data-bs-toggle="dropdown">
-					     	Xin chào, <span sec:authentication="name"></span>
-					    </a>
-					    
-						<ul class="dropdown-menu">
-							<li sec:authorize="hasRole('ROLE_ADMIN')" class="u-nav-item">
-								<a style="padding: 10px 20px;" class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2" th:href="@{/index/admin}">Administrator</a>
-							</li>
-						
-							<li class="u-nav-item"><a
-							sec:authorize="hasRole('ROLE_USER')" 
-							class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-							th:href="@{/order/list}" style="padding: 10px 20px;">Đơn hàng</a></li>
-						  	<li class="u-nav-item" sec:authorize="isAuthenticated()">
-								<a
-								class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-								th:href="@{/auth/logoff}" style="padding: 10px 20px;">Đăng xuất</a>
-							</li>
-						</ul>	
-					</li>		
-				</ul>
-			</div>
-			<div class="u-custom-menu u-nav-container-collapse">
-				<div
-					class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-					<div class="u-inner-container-layout u-sidenav-overflow">
-						<div class="u-menu-close"></div>
-						<ul
-							class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-							<li class="u-nav-item"><a class="u-button-style u-nav-link"
-								th:href="@{/index}">Trang chủ</a></li>
-							<li class="u-nav-item"><a class="u-button-style u-nav-link"
-								th:href="@{/product/list}">Thực đơn</a></li>
-							<li class="u-nav-item"><a class="u-button-style u-nav-link"
-								th:href="@{/index/about}">Giới thiệu</a></li>
-							<li class="u-nav-item"><a class="u-button-style u-nav-link"
-								th:href="@{/index/contact}">Liên hệ</a></li>
-							<li class="u-nav-item"><a class="u-button-style u-nav-link"
-								th:href="@{/cart/view}">Giỏ hàng</a></li>
-						</ul>
-					</div>
+							</g>
+						</svg>
+					</a>
 				</div>
-				<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-			</div>
-		</nav>
+				<div class="u-custom-menu u-nav-container dropdown">
+					<ul class="u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
+						<li class="u-nav-item"><a
+								class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/index}" style="padding: 10px 20px;">Trang chủ</a></li>
+						<li class="u-nav-item">
+							<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/product/list}" style="padding: 10px 20px;">Thực đơn</a>
+						</li>
+						<li class="u-nav-item">
+							<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/index/about}" style="padding: 10px 20px;">Giới thiệu
+							</a>
+						</li>
+						<li class="u-nav-item"><a
+								class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/index/contact}" style="padding: 10px 20px;">Liên hệ</a></li>
+						<li class="u-nav-item"><a
+								class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								th:href="@{/cart/view}" style="padding: 10px 20px;">Giỏ hàng <span
+									sec:authorize="isAuthenticated()">({{cart.count}})</span></a></li>
+						<li class="u-nav-item" sec:authorize="isAuthenticated()">
+							<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+								data-bs-toggle="dropdown">
+								Xin chào, <span sec:authentication="name"></span>
+							</a>
+
+							<ul class="dropdown-menu">
+								<li sec:authorize="hasRole('ROLE_ADMIN')" class="u-nav-item">
+									<a style="padding: 10px 20px;"
+										class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+										th:href="@{/index/admin}">Administrator</a>
+								</li>
+
+								<li class="u-nav-item"><a sec:authorize="hasRole('ROLE_USER')"
+										class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+										th:href="@{/order/list}" style="padding: 10px 20px;">Đơn hàng</a></li>
+								<li class="u-nav-item" sec:authorize="isAuthenticated()">
+									<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+										th:href="@{/auth/logoff}" style="padding: 10px 20px;">Đăng xuất</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="u-custom-menu u-nav-container-collapse">
+					<div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+						<div class="u-inner-container-layout u-sidenav-overflow">
+							<div class="u-menu-close"></div>
+							<ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+								<li class="u-nav-item"><a class="u-button-style u-nav-link" th:href="@{/index}">Trang
+										chủ</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+										th:href="@{/product/list}">Thực đơn</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+										th:href="@{/index/about}">Giới thiệu</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+										th:href="@{/index/contact}">Liên hệ</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link" th:href="@{/cart/view}">Giỏ
+										hàng</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+				</div>
+			</nav>
+		</div>
+
+
 	</div>
-     						
-     				
-</div>
-	
+
 </body>
+
 </html>
