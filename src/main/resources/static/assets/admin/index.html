@@ -15,36 +15,33 @@
 	</header>
 	<div class="row">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			<div class="container-fluid">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#collapsibleNavbar">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="collapsibleNavbar">
-					<ul class="navbar-nav me-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="/index">Trang chủ</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#!product">Quản lý sản phẩm</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#!authorize">Thống kê doanh thu</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/auth/logoff">Đăng xuất</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div ng-view=""></div>
+ 	 <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!product">Quản lý sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!authorize">Thống kê doanh thu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logoff">Đăng xuất</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	<div ng-view=""></div>
 	</div>
-		<footer style="padding: 50px; text-align: center; background-color:black; color: aliceblue;">
-		Viet Fast Food copyright 2023
-	</footer>
+	<footer class="row" ></footer>
 	<script src="/assets/admin/admin-app.js"></script>
-	<script src="/assets/admin/product/	-ctrl.js"></script>
+	<script src="/assets/admin/product/product-ctrl.js"></script>
 	<script src="/assets/admin/authority/authority-ctrl.js"></script>
 </body>
 </html>

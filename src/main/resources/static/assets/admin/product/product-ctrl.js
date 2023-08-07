@@ -50,7 +50,7 @@ app.controller("product-ctrl", function($scope, $http){
 	// Cap nhat
 	$scope.update = function() {
 		var item = angular.copy($scope.form);
-		$http.delete(`/rest/products/${item.id}`, item).then(resp => {
+		$http.put(`/rest/products/${item.id}`, item).then(resp => {
 			var index = $scope.items.findIndex(p => p.id == item.id);
 			$scope.items[index] = item;
 			alert("Cập nhật thành công")
@@ -61,9 +61,9 @@ app.controller("product-ctrl", function($scope, $http){
 	}
 	$scope.delete = function(item) {
 		var item = angular.copy($scope.form);
-		$http.put(`/rest/products/${item.id}`, item).then(resp => {
+		$http.delete(`/rest/products/${item.id}`, item).then(resp => {
 			var index = $scope.items.findIndex(p => p.id == item.id);
-			if (confirm('Bạn có muốn xóa') == true){
+			if (confirm('Bạn có muốn xóa ') == true){
 				$scope.items.splice(index, 1);
 				$scope.reset();
 				alert("Xóa thành công")
@@ -76,7 +76,7 @@ app.controller("product-ctrl", function($scope, $http){
 	$scope.imageChanged = function(files) {
 		var data = new FormData();
 		data.append('file', files[0]);
-		$http.post('/rest/upload/images', data, {
+		$http.post('/rest/upload/image', data, {
 			transformRequest: angular.identity,
 			headers: {'Content-Type': undefined}
 		}).then(resp => {
