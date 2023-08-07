@@ -20,14 +20,23 @@ app.controller("shopping-cart-ctrl", function($http, $scope) {
 		},
 		// Xoa san pham
 		remove(id){
-			var index = this.items.findIndex(item => item.id == id)
-			this.items.splice(index, 1)
-			this.saveToLocalStorage();
+			if(confirm('Bạn có muốn xóa?') == true ) {
+				var index = this.items.findIndex(item => item.id == id)
+				this.items.splice(index, 1)
+				this.saveToLocalStorage();
+			}
 		},
 		// Xoa sach cac mat hang trong gio
-		clear(){
+		clearNow(){
 			this.items = []
 			this.saveToLocalStorage();
+		},
+		
+		clear(){
+			if (confirm('Bạn có muốn xóa toàn bộ?') == true) {
+			    this.items = []
+				this.saveToLocalStorage();
+			}
 		},
 		// Tinh thanh tien cua mot san pham
 		amt_of(item){},
@@ -72,8 +81,8 @@ app.controller("shopping-cart-ctrl", function($http, $scope) {
 		purchase() {
 			var order = angular.copy(this);
 			$http.post("/rest/orders", order).then(resp =>{
-				alert('Successfully');
-				$scope.cart.clear();
+				alert('Thanh toán thành công');
+				$scope.cart.clearNow();
 				location.href = "/order/detail/" + resp.data.id;
 			}).catch(error => {
 				alert('Failed')

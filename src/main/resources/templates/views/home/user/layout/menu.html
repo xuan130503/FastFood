@@ -45,13 +45,15 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 					<li class="u-nav-item"><a
 						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
 						th:href="@{/index/contact}" style="padding: 10px 20px;">Liên hệ</a></li>
-					<li class="u-nav-item"><a
-						sec:authorize="hasRole('ROLE_USER')" 
+					<li class="u-nav-item"><a sec:authorize="!hasRole('ROLE_ADMIN')"
 						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
-						th:href="@{/cart/view}" style="padding: 10px 20px;">Giỏ hàng <span sec:authorize="isAuthenticated()">({{cart.count}})</span></a></li>
-					<li class="u-nav-item"><a
+						th:href="@{/cart/view}" style="padding: 10px 20px;">Giỏ hàng ({{cart.count}})</a></li>
+					<li class="u-nav-item"><a sec:authorize="!isAuthenticated()"
 						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
 						th:href="@{/auth/login/form}" style="padding: 10px 20px;">Đăng nhập</a></li>
+						<li class="u-nav-item"><a sec:authorize="!isAuthenticated()"
+						class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2"
+						th:href="@{/index/registry}" style="padding: 10px 20px;">Đăng ký</a></li>
 					<li class="u-nav-item" style="cursor: pointer;" sec:authorize="isAuthenticated()">
 						<a class="u-button-style u-nav-link u-text-active-palette-3-base u-text-hover-palette-3-light-2" data-bs-toggle="dropdown">
 					     	Xin chào, <span sec:authentication="name"></span>
