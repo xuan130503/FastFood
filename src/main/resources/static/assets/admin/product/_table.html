@@ -1,15 +1,15 @@
 <div class="panel panel-default">
-	<div class="panel-heading">Product List</div>
+	<div class="h2 m-3">Sản phẩm</div>
 	<table class="table table-condensed">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Date</th>
-				<th>Image</th>
-				<th>Category</th>
-				<th>Available</th>
+				<th>Tên sản phẩm</th>
+				<th>Giá</th>
+				<th>Ngày tạo</th>
+				<th>Hình</th>
+				<th>Loại</th>
+				<th>Còn hàng</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -21,11 +21,11 @@
 				<td>{{item.createDate | date: 'dd-MM-yyyy'}}</td>
 				<td>{{item.image}}</td>
 				<td>{{item.category.name}}</td>
-				<td>{{item.available?'Yes':'No'}}</td>
+				<td>{{item.available?'Còn hàng':'Hết hàng'}}</td>
 				<td>
 					<div class="btn-group btn-group-xs">
-						<button class="btn btn-warning" ng-click="edit(item)">Edit</button>
-						<button class="btn btn-warning" ng-click="delete(item)">Delete</button>
+						<button class="btn btn-warning" ng-click="edit(item)" style="margin-right: 20px">Chỉnh sửa</button>
+						<button class="btn btn-warning" ng-click="delete(item)">Xóa</button>
 					</div>
 				</td>
 			</tr>
