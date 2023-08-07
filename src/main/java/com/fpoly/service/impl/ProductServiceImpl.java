@@ -26,4 +26,18 @@ public class ProductServiceImpl implements ProductService{
 		return prodDAO.findByCategoryId(cid);
 	}
 	
+	@Override
+	public Product create(Product product) {
+		return prodDAO.save(product);
+	}
+
+	@Override
+	public Product update(Product product) {
+		return prodDAO.save(product);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		prodDAO.deleteById(id);
+	}
 }

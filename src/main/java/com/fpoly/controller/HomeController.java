@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 @RequestMapping("/index")
 public class HomeController {
+	@RequestMapping({"/admin","/admin/home/index"})
+	public String admin() {
+		return "redirect:/assets/admin/index.html";
+	}
+	
 	@GetMapping()
 	public String index() {
 		return "views/home/user/layout/home";
