@@ -27,7 +27,7 @@ app.controller("shopping-cart-ctrl", function($http, $scope) {
 		// Xoa sach cac mat hang trong gio
 		clear(){
 			this.items = []
-			this.saveToLocalStorge();
+			this.saveToLocalStorage();
 		},
 		// Tinh thanh tien cua mot san pham
 		amt_of(item){},

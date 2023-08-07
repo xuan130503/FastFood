@@ -23,7 +23,7 @@ import lombok.Data;
 @Data
 @Entity 
 @Table(name = "Orders")
-public class Order  implements Serializable{
+public class Order implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
@@ -34,7 +34,6 @@ public class Order  implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "Userinfoid")
 	UserInfo userinfo;
-	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;
