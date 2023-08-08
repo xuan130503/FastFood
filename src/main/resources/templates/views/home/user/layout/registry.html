@@ -6,7 +6,7 @@
 <meta name="keywords"
 	content="40%, ​Where every ingredient tells a story">
 <meta name="description" content="">
-<title>Đăng ký</title>
+<title>Việt Fast Food</title>
 <link rel="stylesheet" th:href="@{/assets/css/nicepage.css}" media="screen">
 <link rel="stylesheet" th:href="@{/assets/css/login.css}" media="screen">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -37,10 +37,14 @@
 <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 <body class="u-body u-overlap u-xl-mode" data-lang="en" ng-app="registry-app" ng-controller="registry-ctrl">
+<a href="/index" class="u-image u-logo u-image-1" data-image-width="1000" data-image-height="1000"> <img
+					width=100px th:src="@{/assets/image/723797_19484994_3556536_ab32e507_image.png}"
+					class="u-logo-image u-logo-image-1">
+			</a>
 	<div class="container">
 		<div class="row justify-content-center" style="padding-top: 100px">
 			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
+			<div class="col-sm-4" style=" margin-bottom: 255px;">
 				<h2>Đăng ký</h2>
 				<div class="form-group">
 					<div>Tài khoản</div>
@@ -48,15 +52,15 @@
 				</div>
 				<div class="form-group">
 					<div>Mật khẩu</div>
-					<input id="password" ng-model="form.password" class="form-control">
+					<input id="password" type="password" ng-model="form.password" class="form-control">
 				</div>
 				<div class="form-group">
 					<div>Email</div>
-					<input id="email" ng-model="form.email" class="form-control">
+					<input id="email" type="email" ng-model="form.email" class="form-control">
 				</div>
 				<div class="form-group">
 					<div>Họ tên</div>
-					<input id="fullname" ng-model="form.fullname" class="form-control">
+					<input id="fullname" type="text" ng-model="form.fullname" class="form-control">
 				</div>
 				<button ng-click="create()" style="float:right" class="btn btn-primary mt-2">Đăng ký</button>
 			</div>

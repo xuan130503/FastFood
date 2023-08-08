@@ -1,3 +1,3 @@
 app.controller("authority-ctrl", function($scope, $http, $location){
-	alert('Phan quyen su dung')
+	alert('Trang thống kê doanh thu')
 })

@@ -7,15 +7,10 @@ app.config(function($routeProvider) {
 		controller: "product-ctrl"
 	})
 	
-	.when("/authorize", {
-		templateUrl:"/assets/admin/authority/index.html",
-		controller: "authority-ctrl"
-	})
-	.when("/unauthorized", {
-		templateUrl:"/assets/admin/authority/unauthorized.html",
+	.when("/revenue", {
+		templateUrl:"/assets/admin/revenue/index.html",
 		controller: "authority-ctrl"
 	})
 	.otherwise({
-		template:"<h1>FPT Polytechnic Administrator</h1>"
 	})
 })
