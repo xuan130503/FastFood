@@ -6,11 +6,6 @@ app.config(function($routeProvider) {
 		templateUrl: "/assets/admin/product/index.html",
 		controller: "product-ctrl"
 	})
-	
-	.when("/revenue", {
-		templateUrl:"/assets/admin/revenue/index.html",
-		controller: "authority-ctrl"
-	})
 	.otherwise({
 	})
 })

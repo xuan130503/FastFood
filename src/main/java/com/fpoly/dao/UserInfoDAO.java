@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fpoly.entity.UserInfo;
 
-public interface UserInfoRepository extends JpaRepository<UserInfo, Integer>{
+public interface UserInfoDAO extends JpaRepository<UserInfo, String>{
 	Optional<UserInfo> findByUsername(String username);
 }

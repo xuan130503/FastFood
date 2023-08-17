@@ -4,10 +4,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.fpoly.entity.UserInfo;
-import com.fpoly.dao.UserInfoRepository;
+import com.fpoly.dao.UserInfoDAO;
 
 @Service
-public record UserService(UserInfoRepository repository,
+public record UserService(UserInfoDAO repository,
                           PasswordEncoder passwordEncoder) {
     public String addUser(UserInfo userInfo) {
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));

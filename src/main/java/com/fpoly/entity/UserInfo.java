@@ -23,7 +23,9 @@ public class UserInfo implements Serializable {
 	private String username;
     private String password;
 	@Column(columnDefinition = "NVARCHAR(255) NOT NULL")
-    private String fullname;
+    private String lastname;
+	@Column(columnDefinition = "NVARCHAR(255) NOT NULL")
+    private String firstname;
     private String email;
     private String photo;
     private String roles;

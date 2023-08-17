@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html th:replace="~{/views/home/user/index.html :: dynamic(~{::body})}" 
+xmlns:th="http://www.thymeleaf.org">
+<body style="padding-top: 80px">
+	<div class="container">
+	 <h2>Thống kê doanh thu</h2>
+    <form th:action="@{/admin/revenue}" method="get">
+	    <label for="startDate">Từ ngày:</label>
+	    <input type="date" id="startDate" name="startDate">
+	    
+	    <label for="endDate">Đến ngày:</label>
+	    <input type="date" id="endDate" name="endDate">
+	    
+	    <button type="submit">Lọc</button>
+	</form>
+    <table class="table">
+        <tr>
+            <th>Mã đơn hàng</th>
+            <th>Địa chỉ</th>
+            <th>Ngày đặt</th>
+            <th>Tổng hóa đơn</th>
+        </tr>
+       <tr th:each="orderInfo : ${orderInfos}">
+		    <td th:text="${orderInfo.order.id}"></td>
+		    <td th:text="${orderInfo.order.address}"></td>
+		    <td th:text="${#dates.format(orderInfo.order.createDate, 'dd-MM-yyyy')}"></td>
+		    <td>[[*{#numbers.formatDecimal(orderInfo.totalAmount, 0, 'COMMA', 0, 'POINT')}]] VND</td>
+		</tr>
+    </table>
+	<p class="text-right">Tổng doanh thu: <span>[[*{#numbers.formatDecimal(overallTotalRevenue, 0, 'COMMA', 0, 'POINT')}]] VND</span></p>
+	</div>
+</body>
+</html>

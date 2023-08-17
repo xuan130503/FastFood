@@ -3,28 +3,24 @@
 <body>
 	<main>
         <div class="panel panel-primary container" style="padding-top: 100px">
-            <div class="panel-heading">Thông tin đơn hàng</div>
+            <h2>Thông tin đơn hàng</h2>
             <table class="table">
 				<thead>
 					<tr>
-						<th>STT</th>
-						<th>Đơn hàng số</th>
+						<th>Đơn số</th>
+						<th>Mã đơn</th>
 						<th>Thời gian</th>
 						<th>Địa chỉ</th>
-						<th></th>
+						<th>Trạng thái</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="order, state: ${orders}">
-						<td>[[${state.index}]]</td>
+						<td>[[${state.index + 1}]]</td>
 						<td>[[${order.id}]]</td>
 						<td>[[${order.createDate}]]</td>
 						<td>[[${order.address}]]</td>
-						<td>
-							<a th:href="@{|/order/detail/${order.id}|}" class="btn btn-default">
-								<b class="glyphicon glyphicon-search"></b>
-							</a>
-						</td>
+						<td>[[${order.status}]]</td>
 					</tr>
 				</tbody>
 			</table>

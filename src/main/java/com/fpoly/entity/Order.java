@@ -32,6 +32,8 @@ public class Order implements Serializable{
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date createDate = new Date();
+	@Column(columnDefinition = "NVARCHAR(255) NOT NULL")
+	String status;
 	@ManyToOne
 	@JoinColumn(name = "username")
 	UserInfo userinfo;

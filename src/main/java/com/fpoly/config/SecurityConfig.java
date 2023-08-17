@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.fpoly.dao.UserInfoRepository;
+import com.fpoly.dao.UserInfoDAO;
 import com.fpoly.service.UserInfoService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-	private final UserInfoRepository repository;
+	private final UserInfoDAO repository;
 	@Bean
     public UserDetailsService userDetailsService() {
 		return new UserInfoService(repository);
