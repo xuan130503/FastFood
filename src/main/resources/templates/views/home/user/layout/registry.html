@@ -47,41 +47,41 @@
 			<div class="col-sm-6" style=" margin-bottom: 255px;">
 			<h2>Đăng ký</h2>
 				<form name="myForm" novalidate>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <div>Tài khoản</div>
-                <input name="username" id="username" ng-model="form.username" class="form-control" required>
-                <span style="color:red" ng-show="myForm.username.$touched && myForm.username.$invalid">Bạn chưa nhập tài khoản</span>
-            </div>
-            <div class="form-group">
-                <div>Họ</div>
-                <input name="lastname" id="lastname" type="text" ng-model="form.lastname" class="form-control" required>
-                 <span style="color:red" ng-show="myForm.lastname.$touched && myForm.lastname.$invalid">Bạn chưa nhập họ</span>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <div>Mật khẩu</div>
-                <input name="password" id="password" type="password" ng-model="form.password" class="form-control" required>
-                 <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid">Bạn chưa nhập mật khẩu</span>
-            </div>
-            <div class="form-group">
-                <div>Tên</div>
-                <input name="firstname" id="firstname" type="text" ng-model="form.firstname" class="form-control" required>
-                <span style="color:red" ng-show="myForm.firstname.$touched && myForm.firstname.$invalid">Bạn chưa nhập tên</span>
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <div>Email</div>
-        <input name="email" id="email" type="email" ng-model="form.email" class="form-control" required>
-        <span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid">
-		<span ng-show="myForm.email.$error.required">Bạn chưa nhập email</span>
-		<span ng-show="myForm.email.$error.email">Email chưa đúng định dạng</span>
-  		</span>
-    </div>
-</form>
+				    <div class="row">
+				        <div class="col-sm-6">
+				            <div class="form-group">
+				                <div>Tài khoản</div>
+				                <input name="username" id="username" ng-model="form.username" class="form-control" required>
+				                <span style="color:red" ng-show="myForm.username.$touched && myForm.username.$invalid">Bạn chưa nhập tài khoản</span>
+				            </div>
+				            <div class="form-group">
+				                <div>Họ</div>
+				                <input name="lastname" id="lastname" type="text" ng-model="form.lastname" class="form-control" required>
+				                 <span style="color:red" ng-show="myForm.lastname.$touched && myForm.lastname.$invalid">Bạn chưa nhập họ</span>
+				            </div>
+				        </div>
+				        <div class="col-sm-6">
+				            <div class="form-group">
+				                <div>Mật khẩu</div>
+				                <input name="password" id="password" type="password" ng-model="form.password" class="form-control" required>
+				                 <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid">Bạn chưa nhập mật khẩu</span>
+				            </div>
+				            <div class="form-group">
+				                <div>Tên</div>
+				                <input name="firstname" id="firstname" type="text" ng-model="form.firstname" class="form-control" required>
+				                <span style="color:red" ng-show="myForm.firstname.$touched && myForm.firstname.$invalid">Bạn chưa nhập tên</span>
+				            </div>
+				        </div>
+				    </div>
+				    <div class="form-group">
+				        <div>Email</div>
+				        <input name="email" id="email" type="email" ng-model="form.email" class="form-control" required>
+				        <span style="color:red" ng-show="myForm.email.$touched && myForm.email.$invalid">
+						<span ng-show="myForm.email.$error.required">Bạn chưa nhập email</span>
+						<span ng-show="myForm.email.$error.email">Email chưa đúng định dạng</span>
+				  		</span>
+				    </div>
+				</form>
 <button ng-click="create()" style="float:right" class="btn btn-primary mt-2" ng-disabled="!myForm.$valid">Đăng ký</button>
 			</div>
 			<div class="col-sm-3"></div>
