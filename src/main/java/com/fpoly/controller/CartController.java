@@ -11,4 +11,6 @@ public class CartController {
 	public String view() {
 		return "/views/home/user/cart/view";
 	}
+
+	// Nguyễn trường xuân
 }
